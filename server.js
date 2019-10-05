@@ -1,5 +1,7 @@
 'use strict';
 
+const setting = require('./setting');
+console.log(setting);
 const http = require('http');
 const server = http.createServer();
 server.on('request', function (req, res) {
@@ -7,5 +9,5 @@ server.on('request', function (req, res) {
     res.write('Hello World');
     res.end();
 })
-server.listen(5656, 'localhost');
+server.listen(setting.port, setting.host);
 console.log('server listening ...');
